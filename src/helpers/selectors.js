@@ -28,6 +28,28 @@ export function getInterview(state, interview) {
   interviewObj.interviewer = state.interviewers[interview.interviewer];
   return interviewObj;
 }
+
+export function getInterviewersForDay(state, day) {
+  //   const validDays = state.days.map(day => day.name);
+  //   // console.log('validDays', validDays);
+  //   if (!day || !validDays.includes(day)) return [];
+
+  //   return state.days
+  //     .filter(interviewer => interviewer.name === day)[0]
+  //     .appointments.map(interId => state.interviewers[interId]);
+  // }
+
+  const filteredInterviewers = state.days.filter(days => days.name === day);
+  // console.log(filteredInterviewers);
+  let interviewers = [];
+  if (filteredInterviewers.length && filteredInterviewers[0].appointments) {
+    interviewers = filteredInterviewers[0].interviewers.map(
+      d => state.interviewers[d]
+    );
+  }
+  return interviewers;
+}
+
 // let results = [];
 // for (let key in state.appointments) {
 //   if ()
