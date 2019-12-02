@@ -18,16 +18,6 @@ export default function DayListItem(props) {
     }
   };
 
-  /* ALTERNATIVE formatSpots
-  const formatSpots = spots => {
-    return `${
-        spots !== 0 ? spots : 'no'
-      } spot${
-        spots !== 1 ? 's' : ''
-      } remaining`;
-    }
-  */
-
   return (
     <li className={dayClass} onClick={() => props.setDay(props.name)}>
       <h2 className="text--regular">{props.name}</h2>
@@ -37,9 +27,3 @@ export default function DayListItem(props) {
     </li>
   );
 }
-
-// name={day.name}
-// spots={day.spots}
-// full={day.spots === 0}
-// day={props.day}
-// setDay={props.setDay}
