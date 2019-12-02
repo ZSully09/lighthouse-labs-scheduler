@@ -56,8 +56,6 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
-  console.log('interview', props.interview);
-
   return (
     <article className="appointment">
       <Header time={props.time} />
