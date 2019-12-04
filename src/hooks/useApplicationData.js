@@ -8,10 +8,7 @@ const SET_INTERVIEW = 'SET_INTERVIEW';
 function getSpotsRemainingForDay(day, appointments) {
   let spotsForThisDay = day.appointments;
   let freeSpots = 0;
-  // go through each spot for this day
   for (const spot of spotsForThisDay) {
-    // if that spot's appointment's interview is null:
-    // that spot is free; increment freeSpots
     if (appointments[spot].interview === null) {
       freeSpots++;
     }
@@ -119,18 +116,11 @@ export default function useApplicationData() {
         appointments: all[1].data,
         interviewers: all[2].data
       });
-      // setState(prev => ({
-      //   ...prev,
-      //   days: response[0].data,
-      //   appointments: response[1].data,
-      //   interviewers: response[2].data
-      // }));
     });
   }, []);
   return {
     state,
     setDay,
-    // dispatch,
     bookInterview,
     cancelInterview
   };
