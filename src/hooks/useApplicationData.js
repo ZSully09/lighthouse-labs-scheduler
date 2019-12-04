@@ -17,7 +17,6 @@ function getSpotsRemainingForDay(day, appointments) {
 }
 
 function decorateDaysWithSpots(days, appointments) {
-  console.log(days);
   const decoratedDays = days.map(day => ({
     ...day,
     spots: getSpotsRemainingForDay(day, appointments)
