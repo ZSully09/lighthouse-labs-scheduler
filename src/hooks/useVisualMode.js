@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+// Helper function passed to Index.js to update state for transitions
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
@@ -9,7 +10,6 @@ export default function useVisualMode(initial) {
     } else {
       setMode(mode);
       setHistory([...history, mode]);
-      // console.log([...history, mode]);
     }
   }
 

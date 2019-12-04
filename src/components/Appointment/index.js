@@ -9,6 +9,7 @@ import Status from './Status';
 import Confirm from 'components/Appointment/Confirm';
 import Error from 'components/Appointment/Error';
 
+// Transition Views
 const EMPTY = 'EMPTY';
 const SHOW = 'SHOW';
 const CREATE = 'CREATE';
@@ -20,6 +21,7 @@ const ERROR_SAVE = 'ERROR_SAVE';
 const ERROR_DELETE = 'ERROR_DELETE';
 
 export default function Appointment(props) {
+  // Save an appointment
   function save(name, interviewer) {
     transition(SAVING);
     const interview = {
@@ -34,6 +36,7 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_SAVE, true));
   }
 
+  // Delete an appointment
   function deleting() {
     transition(DELETING, true);
     props

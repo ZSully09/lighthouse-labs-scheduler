@@ -2,6 +2,7 @@ export const SET_DAY = 'SET_DAY';
 export const SET_APPLICATION_DATA = 'SET_APPLICATION_DATA';
 export const SET_INTERVIEW = 'SET_INTERVIEW';
 
+// Functions used to update spots upon cancelling or booking an interview
 function getSpotsRemainingForDay(day, appointments) {
   let spotsForThisDay = day.appointments;
   let freeSpots = 0;
@@ -21,6 +22,7 @@ function decorateDaysWithSpots(days, appointments) {
   return decoratedDays;
 }
 
+// Reducer function
 export default function reducer(state, action) {
   switch (action.type) {
     case SET_DAY:
