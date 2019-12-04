@@ -23,6 +23,7 @@ export default function InterviewerList(props) {
   );
 }
 
+// Set prop types
 InterviewerList.propTypes = {
   interviewer: PropTypes.number,
   setInterviewer: PropTypes.func.isRequired
