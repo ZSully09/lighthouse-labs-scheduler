@@ -20,11 +20,14 @@ export function getInterview(state, interview) {
 }
 
 // Gets the interviewers for a given day
-export function getInterviewersForDay(state, day) {
-  const validDays = state.days.map(day => day.name);
-  if (!day || !validDays.includes(day)) return [];
+export function getInterviewersForDay(state, dayName) {
+  const validDayNames = state.days.map(dayObj => dayObj.name);
+  if (!dayName || !validDayNames.includes(dayName)) return [];
 
-  return state.days
-    .filter(interviewer => interviewer.name === day)[0]
-    .appointments.map(interId => state.interviewers[interId]);
+  const todayObj = state.days.filter(dayObj => dayObj.name === dayName)[0];
+  const interviewersObj = todayObj.interviewers.map(
+    interId => state.interviewers[interId]
+  );
+  console.log('inside getInterviewersForDay', dayName, interviewersObj);
+  return interviewersObj;
 }
