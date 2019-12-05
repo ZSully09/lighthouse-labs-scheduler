@@ -28,6 +28,5 @@ export function getInterviewersForDay(state, dayName) {
   const interviewersObj = todayObj.interviewers.map(
     interId => state.interviewers[interId]
   );
-  console.log('inside getInterviewersForDay', dayName, interviewersObj);
   return interviewersObj;
 }
