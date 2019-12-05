@@ -21,3 +21,7 @@ npm test
 ```sh
 npm run storybook
 ```
+
+!["Full view upon loading"](https://github.com/ZSully09/lighthouse-labs-scheduler/blob/master/docs/main-view.jpeg)
+!["Editing an Interview"](https://github.com/ZSully09/lighthouse-labs-scheduler/blob/master/docs/edit.jpeg)
+!["Delete Confirmation"](https://github.com/ZSully09/lighthouse-labs-scheduler/blob/master/docs/delete-confirmation.jpeg)
